@@ -1,2 +1,2 @@
 # rinkaku
-Rinkaku framework on Go
+Expertise set.
