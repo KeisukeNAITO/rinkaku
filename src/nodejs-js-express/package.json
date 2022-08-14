@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-js-express",
+  "version": "0.0.1",
+  "description": "Initial templates for nodejs and express.",
+  "main": "main.js",
+  "scripts": {
+    "lint": "eslint ./",
+    "lint:report": "npm run lint -- -o eslint/report.json",
+    "format": "prettier ./",
+    "format:overwrite": "npm run format -- --write",
+    "test": "jest ./test/ --TestTimeout=60000",
+    "test:coverage": "npm run test -- --coverage",
+    "start": "node main.js"
+  },
+  "author": "Keisuke NAITO",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2",
+    "log4js": "^6.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.4",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "supertest": "^6.1.6"
+  }
+}
