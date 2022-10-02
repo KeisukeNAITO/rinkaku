@@ -15,15 +15,15 @@ const log_level: string =
 interface loggerConfig {
   appenders: {
     consoleLog: {
-      type: string,
-    },
-  },
+      type: string;
+    };
+  };
   categories: {
     default: {
-      appenders: string[],
-      level: string,
-    },
-  },
+      appenders: string[];
+      level: string;
+    };
+  };
 }
 
 const config: loggerConfig = {
