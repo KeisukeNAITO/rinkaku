@@ -8,6 +8,10 @@ on:
 jobs:
   node_build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: /src/nodejs-js-express
     
     strategy:
       matrix:
@@ -15,9 +19,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install dependencies
-        run: cat /etc/os-release && node -v && pow && ls && npm ci
+        run: npm ci
