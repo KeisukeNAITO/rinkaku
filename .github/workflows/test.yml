@@ -11,7 +11,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: /src/nodejs-js-express
+        working-directory: 1st_take/src/nodejs-js-express
     
     strategy:
       matrix:
