@@ -28,4 +28,4 @@ jobs:
       - name: Test apps
         run: npm test
       - name: Lint apps
-        run: npm test
+        run: npm lint
