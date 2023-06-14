@@ -1,7 +1,7 @@
 name: Library update check
 on:
-  schedule:
-    - cron: '0 3 * * 1'
+  push:
+    branches: [ develop/* ]
 
 jobs:
   nodejs-js-express:
