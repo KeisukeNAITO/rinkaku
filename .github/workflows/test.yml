@@ -29,3 +29,29 @@ jobs:
         run: npm run test
       - name: Lint apps
         run: npm run lint
+
+  nodejs-ts-express:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: src/nodejs-ts-express
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Test apps
+        run: npm run test
+      - name: Lint apps
+        run: npm run lint
+      - name: Build apps
+        run: npm run build
