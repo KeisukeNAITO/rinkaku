@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 jobs:
-  node_build:
+  nodejs-js-express:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -19,11 +19,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
       - name: Install dependencies
         run: npm ci
+      - name: Test apps
+        run: npm test
+      - name: Lint apps
+        run: npm test
